@@ -15,34 +15,44 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      drawer:Container(
-        width: MediaQuery.of(context).size.width * 0.6,
-        decoration: BoxDecoration(
-          gradient:  LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromRGBO(199, 113, 214, 1),
-              Color.fromRGBO(28, 7, 81, 1),
-              Color.fromRGBO(10, 1, 11, 1),
-            ],
-            stops: [0.03, 0.5, 0.87],
-            transform: GradientRotation(135 * 3.14159265 / 180),
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              MyDrawerHeader(updateDrawerHeader:_updateDrawerHeader),
-              DrawerList(),
-            ],
-          ),
-        ),
 
+      drawer:Expanded(
+        child: SingleChildScrollView(
+          child: Container(
+
+            width: MediaQuery.of(context).size.width * 0.6,
+            decoration: BoxDecoration(
+              gradient:  LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromRGBO(199, 113, 214, 1),
+                  Color.fromRGBO(28, 7, 81, 1),
+                  Color.fromRGBO(10, 1, 11, 1),
+                ],
+                stops: [0.03, 0.5, 0.87],
+                transform: GradientRotation(135 * 3.14159265 / 180),
+              ),
+            ),
+
+            child: SingleChildScrollView(
+              child: Container(
+
+                child: Column(
+                  children: [
+                    MyDrawerHeader(updateDrawerHeader:_updateDrawerHeader),
+                    DrawerList(),
+                  ],
+                ),
+              ),
+            ),
+
+          ),
+        ),
       ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text("C A M P A V E R S E" ,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25,color: Colors.white70),),
+        title: Text("C A M P A V E R S E" ,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25,color: Colors.white),),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -99,14 +109,14 @@ class SecondScreen extends StatelessWidget {
                              Navigator.pushNamed(context, '/vnitclubs');
 
                            },iconSize: 30,), IconName:"Clubs"),
-                           IconsPage(IconButton: IconButton(icon:Icon( Icons.shopping_bag_outlined,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"Training and Placement")
+                           IconsPage(IconButton: IconButton(icon:Icon( Icons.shopping_bag_outlined,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"TnP")
 
 
                          ],
                        ),
                      ),
                        Padding(
-                         padding: const EdgeInsets.only(top: 30,bottom: 10),
+                         padding: const EdgeInsets.only(top: 30,bottom: 10,left: 15),
                          child: Row(
                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                            children: [
@@ -126,7 +136,7 @@ class SecondScreen extends StatelessWidget {
                  ),
                ),
              ),
-             HorizontalListView(),
+              imageSlider(),
 
 
 

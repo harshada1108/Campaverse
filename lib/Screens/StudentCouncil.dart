@@ -2,6 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 
 class StudentCouncil extends StatelessWidget {
+  final List<String> images = [
+    'images/StudentCouncilImages/ZEE_9836 - HRUSHIKESH JADHAV.jpg',
+    'images/StudentCouncilImages/photo (gate) - MT22STR010_VINAYAK.jpg',
+    'images/StudentCouncilImages/IMG_1239 - Minza Shahid.jpg',
+    'images/StudentCouncilImages/WhatsApp Image 2023-08-11 at 2.27.33 PM - BT20MEC002_ADITYA.jpeg',
+    'images/StudentCouncilImages/IMG_20230812_153514 - Dhanesh Choudhary.jpg',
+    'images/StudentCouncilImages/professsional_photo_white_bg - BT20EEE019_Nikhil_Bhisle.jpg',
+    'images/StudentCouncilImages/IMG_7347 - Satyan Patil.jpg',
+    'images/StudentCouncilImages/IMG-20230423-WA0011 - Samruddhi Wagh.jpg',
+    'images/StudentCouncilImages/SAVE_20230811_201702 - GANJI NAYAN.jpg',
+    'images/StudentCouncilImages/IMG_20230811_095709 - Mrunal Sonawane.jpg',
+        'images/StudentCouncilImages/20230208001610_IMG_2846 - Ayush Chavan.JPG',
+    'images/StudentCouncilImages/SAVE_20220618_154850 - BT20CIV043 Alisha Hatalkar.jpg',
+    'images/StudentCouncilImages/IMG_20230811_180422 - Yashasvi Therkar.jpg',
+    'images/StudentCouncilImages/IMG_20230811_095304 - BT20MEC018 BRAHMANAND Khandale.jpg',
+    'images/StudentCouncilImages/IMG20200719182726 - Gaurav Mishra.jpg'
+
+  ];
   final List<String> councilposts = [
     'GENERAL SECRETARY',
     'P.G ACADEMIC AFFAIRS SECRETARY',
@@ -76,7 +94,7 @@ class StudentCouncil extends StatelessWidget {
     frontWidgets = List.generate(
       councilposts.length,
           (index) => FrontCardWidget(
-        imageUrl: 'image_url_$index',
+        imageUrl: images[index],
         title: councilposts[index],
       ),
     );
@@ -100,7 +118,7 @@ class StudentCouncil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('STUDENT COUNCIL 2023-2024',style: TextStyle(color: Colors.white70),),
-        backgroundColor: Colors.transparent,elevation: 0,titleSpacing: 2,
+        backgroundColor: Color.fromRGBO(10, 1, 11, 1),elevation: 0,titleSpacing: 2,
       centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(8),
@@ -151,6 +169,7 @@ class FrontCardWidget extends StatelessWidget {
   final String imageUrl;
   final String title;
 
+
   FrontCardWidget({required this.imageUrl, required this.title});
 
   @override
@@ -164,6 +183,7 @@ class FrontCardWidget extends StatelessWidget {
           CircleAvatar(
             radius: 70,
             backgroundColor: Colors.deepPurple,
+            backgroundImage: AssetImage(imageUrl),
 
           ),
           SizedBox(height: 10),
@@ -195,7 +215,7 @@ class BackCardWidget extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text( name, style: TextStyle(fontSize: 18,color: Colors.white70)),
+              child: Text( name, style: TextStyle(fontSize: 18,color: Colors.white70,fontWeight: FontWeight.bold)),
             ),
             SizedBox(height: 10),
             Text(enrollment,style: TextStyle(fontSize: 14,color: Colors.white70)),

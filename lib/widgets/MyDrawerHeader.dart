@@ -29,7 +29,8 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
           children: [
             CircleAvatar(
               radius: 40,
-              backgroundImage: AssetImage('images/defaultimage.jpeg'),
+              backgroundImage: AssetImage('images/avatar.jpeg'),
+
             ),
             Column(
              crossAxisAlignment: CrossAxisAlignment.start,

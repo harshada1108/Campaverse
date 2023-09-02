@@ -34,70 +34,102 @@ class DrawerList extends StatelessWidget {
     ]),
           MenuList("Academic Calender", Icons.calendar_month,(){}),
           MenuList("Sports", Icons.sports_soccer,(){}),
-          MenuList("Student Council Notices", Icons.speaker_notes,(){
-            AwesomeDialog(
-              context: context,
-              body: Container(
-               child:Column(
-                children: [
-                  MyListtile(mytitle: "Workshops and Meets", onTap: (){}),
-                  MyListtile(mytitle: "Achievements", onTap: (){}),
-                  MyListtile(mytitle: "Inter nit tournaments", onTap: (){}),
-                  MyListtile(mytitle: "Research papers", onTap: (){}),
-                  MyListtile(mytitle: "Competitions and participants", onTap: (){}),
-                ],
-               ) ,
-              ),
-              dialogType: DialogType.noHeader,
-              // Change the dialog type as needed
-              animType: AnimType.SCALE,
-              barrierColor: Colors.black38.withOpacity(0.9),
-              title: "Student Council Notices",
-              desc: "This is the content of the notice.",
-              customHeader: Text('Notifications'),
-              btnOkText: "Close",
-              btnOkColor: Colors.lightBlueAccent,
-              btnOkOnPress: () {},
-            )..show();
-          }),
-          MenuList("Academic Section", Icons.school,(){
-            AwesomeDialog(
-              context: context,
 
-              body: Container(
+          ExpandableMenuList('Student Council Notices', Icons.speaker_notes, [
+            ListTile(
 
-                child:Column(
-                  children: [
-                    MyListtile(mytitle: "ARCHITECTURE AND PLANNING", onTap: (){}),
+              title: Text("Workshops and Conferences"
 
-                    MyListtile(mytitle: "COMPUTER SCIENCE AND ENGINEERING", onTap: (){}),
-                    MyListtile(mytitle: "CIVIL", onTap: (){}),
-                    MyListtile(mytitle: "ELECTRONICS AND COMMUNICATION", onTap: (){}),
-                    MyListtile(mytitle: "MECHANICAL ENGINEERING", onTap: (){}),
-                    MyListtile(mytitle: "CHEMICAL ENGINEERING", onTap: (){}),
-                    MyListtile(mytitle: "ELECTRICAL AND ELECTRONICS", onTap: (){}),
-                    MyListtile(mytitle: "MINING", onTap: (){}),
-                  ],
-                ) ,
-              ),
-                dialogType: DialogType.noHeader,
-              // Change the dialog type as needed
-              animType: AnimType.SCALE,
-              barrierColor: Colors.black38.withOpacity(0.9),
-              title: "Academic section",
-              desc: "This is the content of the notice.",
-              customHeader: Text('Academic Section'),
-              btnOkText: "Close",
-              btnOkColor: Colors.lightBlueAccent,
-              btnOkOnPress: () {},
-            )..show();
-          }),
-          MenuList("Recruitments", Icons.model_training,(){}),
+                 ,style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+
+            ListTile(
+              title: Text("Achievements",style: TextStyle(color: Colors.white70)),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("Inter Nit Tournaments",style: TextStyle(color: Colors.white70)),
+              onTap: () {
+                // Handle onTap for Notification 2
+              },
+            ),ListTile(
+              title: Text('Research Papers',style: TextStyle(color: Colors.white70)),
+              onTap: () {
+                // Handle onTap for Notification 2
+              },
+            ),ListTile(
+              title: Text("Competition and Participants",style: TextStyle(color: Colors.white70)),
+              onTap: () {
+                // Handle onTap for Notification 2
+              },
+            ),
+
+
+          ]),
+
+
+      ExpandableMenuList("Acedemic Section", Icons.notification_add_rounded, [
+        ListTile(
+
+          title: Text("ARCHITECTURE AND PLANNING",style: TextStyle(color: Colors.white70),),
+          onTap: () {
+            // Handle onTap for Notification 1
+          },
+        ),
+
+        ListTile(
+          title: Text("COMPUTER SCIENCE AND ENGINEERING",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 1
+          },
+        ),
+        ListTile(
+          title: Text("CIVIL",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        ),
+        ListTile(
+          title: Text("MECHANICAL",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        ), ListTile(
+          title: Text("ELECTRICAL",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        ), ListTile(
+          title: Text("MINING",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        ), ListTile(
+          title: Text("ELECTRICAL AND ELECTRONICS",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        ), ListTile(
+          title: Text("CHEMICAL",style: TextStyle(color: Colors.white70)),
+          onTap: () {
+            // Handle onTap for Notification 2
+          },
+        )],
+      ),
+
+        MenuList("Recruitments", Icons.model_training,(){}),
           MenuList("Services", Icons.medical_services_outlined,(){}),
           MenuList("Settings", Icons.settings,(){}),
 
-        ],
-      ),
+
+
+      ]
+      )
     );
   }
 }
@@ -118,12 +150,12 @@ class MenuList extends StatelessWidget {
           height: 60,
           child: Row(
             children: [
-              Expanded(child: Icon(icon, size: 15, color: Colors.white)),
+              Expanded(child: Icon(icon, size: 20, color: Colors.white)),
               Expanded(
                 flex: 5,
                 child: Text(
                   title,
-                  style: TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.w300),
+                  style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.w300),
                 ),
               ),
             ],
@@ -164,13 +196,13 @@ class _ExpandableMenuListState extends State<ExpandableMenuList> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Icon(widget.icon, size: 15, color: Colors.white),
+                    child: Icon(widget.icon, size: 20, color: Colors.white),
                   ),
                   Expanded(
                     flex: 5,
                     child: Text(
                       widget.title,
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
                 ],
@@ -206,12 +238,11 @@ class MyListtile extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          child: ListTile(
-            tileColor:   Color.fromRGBO(28, 7, 81, 1),
-            title: Text(mytitle,style: TextStyle(color: Colors.white70),),
-          ),
+        padding: const EdgeInsets.only(bottom: 8),
+        child: ListTile(
+          minVerticalPadding: 5,
+          tileColor:   Color.fromRGBO(28, 7, 81, 1),
+          title: Text(mytitle,style: TextStyle(color: Colors.white70),),
         ),
       ),
     );

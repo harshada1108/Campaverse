@@ -25,6 +25,7 @@ class WelcomeScreen extends StatelessWidget {
             child: CircleAvatar(
               radius: 60,
               backgroundColor: Colors.white.withOpacity(0.1),
+              backgroundImage: AssetImage('images/clubslogos/ids.jpg'),
 
             ),
           ),

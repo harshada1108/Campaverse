@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children : [ CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.white.withOpacity(0.1),
-                      backgroundImage: AssetImage('images/defaultimage.jpeg'),
+                      backgroundImage: AssetImage('images/avatar.jpeg'),
 
                     ),
                       IconButton(onPressed: (){

@@ -9,18 +9,31 @@ class VnitClubs extends StatelessWidget {
     'images/clubslogos/ivlabs.jpg',
     'images/clubslogos/mag.jpg',
     'images/clubslogos/octaves.jpg',
-    'images/clubslogos/octaves.jpg'
+    'images/clubs/groves.jpg',
+    'images/clubs/cyclistsofvnit.jpg',
+        'images/clubs/clubcapture.jpg',
+        'images/clubs/quiz.jpg',
+        'images/clubs/savvad.jpg',
+        'images/clubs/shell.jpg',
+        'images/clubs/studentChapter.jpg',
+        'images/clubs/teamvelocitry.jpg',
+    'images/clubs/tesla.jpg'
+
+
+
   ];
   @override
   Widget build(BuildContext context) {
 
       return Scaffold(
         appBar: AppBar(
-          title: Text('VNIT CLUBS'),
+
+          title: Text('VNIT CLUBS And Communities'),
+
           centerTitle: true,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color.fromRGBO(10, 1, 11, 1),
         ),
-        extendBodyBehindAppBar: true,
+
         body: Container(
           decoration: BoxDecoration(
             gradient:  LinearGradient(
@@ -37,9 +50,9 @@ class VnitClubs extends StatelessWidget {
           ),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: 1,
             ),
-            itemCount: 8,
+            itemCount: 16,
             itemBuilder: (context, index) {
               return ClubCard(clublogos: clublogos[index],);
             },
@@ -70,25 +83,28 @@ class _ClubCardState extends State<ClubCard> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
-        elevation: 5,
-        child: Column(
-          children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              // Replace with your image
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(widget.clublogos),
 
+        elevation: 5,
+        child: Container(
+          height: 250,
+          child: Column(
+            children: [
+              Container(
+                height: 300,
+                width: double.infinity,
+                // Replace with your image
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(widget.clublogos),
+
+                  )
                 )
-              )
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.deepPurple.withOpacity(0.5),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+              ),
+              Expanded(
+
+                child: Container(
+                  height: 10,
+                  color: Colors.deepPurple.withOpacity(0.5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -96,11 +112,11 @@ class _ClubCardState extends State<ClubCard> {
                         onPressed: () {
                           // Handle info button tap
                         },
-                        icon: Icon(Icons.info_outline),
+                        icon: Icon(Icons.info_outline,size: 30,),
                       ),
                       Row(
                         children: [
-                          Icon(Icons.people),
+                          Icon(Icons.people,size: 30),
                           SizedBox(width: 4),
                           Text('1000'), // Replace with follower count
                         ],
@@ -110,14 +126,14 @@ class _ClubCardState extends State<ClubCard> {
                         style: ElevatedButton.styleFrom(
                           primary: _isFollowing ? Colors.grey :Color.fromRGBO(28, 7, 81, 1),
                         ),
-                        child: Text(_isFollowing ? 'Following' : 'Follow'),
+                        child: Text(_isFollowing ? 'Added Stars' : 'Add Stars to your account'),
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
