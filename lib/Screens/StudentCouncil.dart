@@ -12,7 +12,7 @@ class StudentCouncil extends StatelessWidget {
     'images/StudentCouncilImages/IMG_7347 - Satyan Patil.jpg',
     'images/StudentCouncilImages/IMG-20230423-WA0011 - Samruddhi Wagh.jpg',
     'images/StudentCouncilImages/SAVE_20230811_201702 - GANJI NAYAN.jpg',
-    'images/StudentCouncilImages/IMG_20230811_095709 - Mrunal Sonawane.jpg',
+    'images/lr1.jpg',
         'images/StudentCouncilImages/20230208001610_IMG_2846 - Ayush Chavan.JPG',
     'images/StudentCouncilImages/SAVE_20220618_154850 - BT20CIV043 Alisha Hatalkar.jpg',
     'images/StudentCouncilImages/IMG_20230811_180422 - Yashasvi Therkar.jpg',

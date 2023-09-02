@@ -5,6 +5,7 @@ import 'package:loginpage/widgets/ListViewHorizontal.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
 import 'package:loginpage/widgets/icons.dart';
 import 'package:loginpage/main.dart';
+import 'package:loginpage/widgets/imageSlider.dart';
 class SecondScreen extends StatelessWidget {
   void _updateDrawerHeader(String name, String enrollmentNo) {
 
@@ -52,7 +53,11 @@ class SecondScreen extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text("C A M P A V E R S E" ,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25,color: Colors.white),),
+        title: Text("C A M P A V E R S E" ,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25,color: Colors.white,shadows:[  Shadow(
+          offset: Offset(2.0, 2.0),
+          blurRadius: 3.0,
+          color: Colors.grey,
+        ),]),),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -104,7 +109,7 @@ class SecondScreen extends StatelessWidget {
                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                          children: [
 
-                           IconsPage(IconButton: IconButton(icon:Icon( Icons.event_note_outlined,color: Colors.white,), onPressed: (){},iconSize: 30,), IconName:"NoticBoard"),
+                           IconsPage(IconButton: IconButton(icon:Icon( Icons.event_note_outlined,color: Colors.white,), onPressed: (){},iconSize: 30,), IconName:"NoticeBoard"),
                            IconsPage(IconButton: IconButton(icon:Icon( Icons.people_alt,color: Colors.white), onPressed: (){
                              Navigator.pushNamed(context, '/vnitclubs');
 
@@ -120,11 +125,13 @@ class SecondScreen extends StatelessWidget {
                          child: Row(
                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                            children: [
-                             IconsPage(IconButton: IconButton(icon:Icon( Icons.shopping_cart,color: Colors.white), onPressed: (){
-                              Navigator.pushNamed(context, '/studentcouncil');
+                             IconsPage(IconButton: IconButton(icon:Icon( Icons.book_online_outlined,color: Colors.white), onPressed: (){
 
-                             },iconSize: 30,), IconName:"Shopping"),
-                             IconsPage(IconButton: IconButton(icon:Icon( Icons.miscellaneous_services,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"Services") ,
+
+                             },iconSize: 30,), IconName : "Bookings"),
+                             IconsPage(IconButton: IconButton(icon:Icon( Icons.miscellaneous_services,color: Colors.white), onPressed: (){
+
+                             },iconSize: 30,), IconName:"Services",) ,
                              IconsPage(IconButton: IconButton(icon:Icon( Icons.school_outlined,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"Academic Section")
 
                            ],
@@ -136,7 +143,7 @@ class SecondScreen extends StatelessWidget {
                  ),
                ),
              ),
-              imageSlider(),
+             HorizontalScrollCards(),
 
 
 

@@ -28,7 +28,7 @@ class VnitClubs extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
 
-          title: Text('VNIT CLUBS And Communities'),
+          title: Text('VNIT CLUBS '),
 
           centerTitle: true,
           backgroundColor: Color.fromRGBO(10, 1, 11, 1),

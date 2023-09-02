@@ -1,37 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
-class imageSlider extends StatelessWidget {
-  final List<String> images = [
-    'images/studentcouncil1.jpg',
-    'images/clubslogos/ids.jpg',
-    'images/idscore/bhushanbahale.jpg',
-    'images/idscore/nvibhavan.jpg',
-    'images/idscore/shrivardhini.jpg',
-   'images/idscore/vanshikarajput.jpg',
-    'images/idscore/yashgaikwad.jpg'
+class HorizontalScrollCards extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: <Widget>[
+          HorizontalCard(imageUrl: 'images/clubslogos/ids.jpg',onTap: (){ Navigator.pushNamed(context, '/idspage');},),
+          HorizontalCard(imageUrl: 'images/studentcouncil1.jpg',onTap: (){Navigator.pushNamed(context, '/studentcouncil');},),
+          HorizontalCard(imageUrl: 'images/avatar.jpeg',onTap: (){},),
+          HorizontalCard(imageUrl: 'images/axis.jpg',onTap: (){},),
+         // HorizontalCard(imageUrl: 'images/arohi,jpg',onTap: (){},),
+        ],
+      ),
+    );
+  }
+}
 
-  ];
+class HorizontalCard extends StatelessWidget {
+  final String imageUrl;
+  final VoidCallback onTap;
+
+  HorizontalCard({required this.imageUrl, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      width: double.infinity,
-      height: 300,
-      child: CarouselSlider(
+    return Container(
+     decoration: BoxDecoration(
 
-        items: images.map((imagePath) {
-          return Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          );
-        }).toList(),
-        options: CarouselOptions(
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 2),
-            aspectRatio: 16 / 9,
-            enlargeCenterPage: true
+        color: Colors.white70.withOpacity(0.1), // Opacity value (0.5) for semi-transparency
+        borderRadius: BorderRadius.circular(50), // Rounded corners
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2), // Shadow color and opacity
+            spreadRadius: 5, // Spread radius of the shadow
+            blurRadius: 10, // Blur radius of the shadow
+            offset: Offset(0, 3), // Offset of the shadow
+          ),
+        ],
+      ),
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          margin: EdgeInsets.all(16.0),
+          child: Container(
+            width: 200.0, // Adjust card width as needed
+            height: 200.0, // Adjust card height as needed
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imageUrl),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ),
-      ),);
+      ),
+    );
   }
 }
