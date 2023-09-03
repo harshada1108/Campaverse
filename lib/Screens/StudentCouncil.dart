@@ -129,19 +129,17 @@ class StudentCouncil extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
       body: Container(
-        decoration:  BoxDecoration(
-      gradient:  LinearGradient(
-      begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-          Color.fromRGBO(199, 113, 214, 1),
-          Color.fromRGBO(28, 7, 81, 1),
-          Color.fromRGBO(10, 1, 11, 1),
-        ],
-        stops: [0.03, 0.5, 0.87],
-        transform: GradientRotation(135 * 3.14159265 / 180),
-      ),
-    ),
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 0.9, // Radius of 1.0 makes it circular
+            colors: [
+              Color.fromRGBO(241, 36, 85, 1),
+              Color.fromRGBO(9, 15, 21, 1),
+            ],
+            stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(

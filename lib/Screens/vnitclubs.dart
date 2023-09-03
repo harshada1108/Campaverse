@@ -36,16 +36,14 @@ class VnitClubs extends StatelessWidget {
 
         body: Container(
           decoration: BoxDecoration(
-            gradient:  LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+            gradient: RadialGradient(
+              center: Alignment.center,
+              radius: 0.9, // Radius of 1.0 makes it circular
               colors: [
-                Color.fromRGBO(199, 113, 214, 1),
-                Color.fromRGBO(28, 7, 81, 1),
-                Color.fromRGBO(10, 1, 11, 1),
+                Color.fromRGBO(241, 36, 85, 1),
+                Color.fromRGBO(9, 15, 21, 1),
               ],
-              stops: [0.03, 0.5, 0.87],
-              transform: GradientRotation(135 * 3.14159265 / 180),
+              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
             ),
           ),
           child: GridView.builder(
@@ -104,7 +102,7 @@ class _ClubCardState extends State<ClubCard> {
 
                 child: Container(
                   height: 10,
-                  color: Colors.deepPurple.withOpacity(0.5),
+                  color:  Color.fromRGBO(241, 50, 90, 1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

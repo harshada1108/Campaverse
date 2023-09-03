@@ -33,16 +33,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
         body: Container(
           decoration: BoxDecoration(
-            gradient:  LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+            gradient: RadialGradient(
+              center: Alignment.center,
+              radius: 0.9, // Radius of 1.0 makes it circular
               colors: [
-                Color.fromRGBO(199, 113, 214, 1),
-                Color.fromRGBO(28, 7, 81, 1),
-                Color.fromRGBO(10, 1, 11, 1),
+                Color.fromRGBO(241, 36, 85, 1),
+                Color.fromRGBO(9, 15, 21, 1),
               ],
-              stops: [0.03, 0.5, 0.87],
-              transform: GradientRotation(135 * 3.14159265 / 180),
+              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
             ),
           ),
 
@@ -55,52 +53,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Center(
                   child: Stack(
-                    children : [ CircleAvatar(
-                      radius: 60,
-                      backgroundColor: Colors.white.withOpacity(0.1),
-                      backgroundImage: AssetImage('images/avatar.jpeg'),
+                    children : [ Column(
+                      children:[ CircleAvatar(
+                        radius: 60,
+                        backgroundColor: Colors.white.withOpacity(0.1),
+                        backgroundImage: AssetImage('images/avatar.jpeg'),
+                      ),
 
-                    ),
-                      IconButton(onPressed: (){
-                      showModalBottomSheet(
-                        context: context,
-                       builder: (BuildContext context) {
-                       return Column(
-                       mainAxisSize: MainAxisSize.min,
-                       children: <Widget>[
-                        ListTile(
-                         leading: Icon(Icons.photo_library),
-                         title: Text('Choose from Gallery'),
-                         onTap: () {
-                           Navigator.pop(context);
-                         // _selectImage(ImageSource.gallery);
-                             },
-                          ),
-                        ListTile(
-                             leading: Icon(Icons.camera_alt),
-                                title: Text('Take a Photo'),
-                             onTap: () {
-                             Navigator.pop(context);
-                         //  _selectImage(ImageSource.camera);
+
+                      IconButton(onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ListTile(
+                                  leading: Icon(Icons.photo_library),
+                                  title: Text('Choose from Gallery'),
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                    // _selectImage(ImageSource.gallery);
+                                  },
+                                ),
+                                ListTile(
+                                  leading: Icon(Icons.camera_alt),
+                                  title: Text('Take a Photo'),
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                    //  _selectImage(ImageSource.camera);
+                                  },
+                                ),
+                              ],
+                            );
                           },
-                        ),
-                        ],
-                       );
-                        },
-                          );
-                           },
-   icon:Icon(Icons.camera_alt_outlined))
+                        );
+                      },
+   icon:Icon(Icons.camera_alt_outlined,color: Colors.white,))
+                      ]
+                  )
+
                   ]
                   ),
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.only(top: 10,bottom: 10),
+                padding: const EdgeInsets.only(bottom: 10),
                 child: Center(
                   child: Text('C A M P A V E R S E',style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w700
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700, shadows:[  Shadow(
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 3.0,
+                    color: Colors.grey,
+                  ),]
 
                   ),),
                 ),

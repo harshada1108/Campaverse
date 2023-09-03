@@ -9,16 +9,22 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
 
       body: Container(
+
         decoration: BoxDecoration(
-          image:DecorationImage(
-            image: AssetImage('images/Colorful-Modern-Gradient-Page-Border.jpeg'),
-            fit: BoxFit.cover,
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 0.9, // Radius of 1.0 makes it circular
+            colors: [
+              Color.fromRGBO(241, 36, 85, 1),
+              Color.fromRGBO(9, 15, 21, 1),
+            ],
+            stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
           ),
         ),
 
 
       child:Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Center(
@@ -32,8 +38,13 @@ class WelcomeScreen extends StatelessWidget {
           SizedBox(height: 20,),
           Center(
             child: Text('C A M P A V E R S E',style: TextStyle(
-              color: Colors.white70,
-              fontWeight: FontWeight.w700
+              color: Colors.white,
+              fontSize: 25.0,
+              fontWeight: FontWeight.w700,shadows:[  Shadow(
+              offset: Offset(2.0, 2.0),
+              blurRadius: 3.0,
+              color: Colors.grey,
+            ),]
 
             ),),
           ),
@@ -45,7 +56,6 @@ class WelcomeScreen extends StatelessWidget {
                 width: 50,
                 height: 450,
                 decoration: BoxDecoration(
-
                   color: Colors.white70.withOpacity(0.1), // Opacity value (0.5) for semi-transparency
                   borderRadius: BorderRadius.circular(50), // Rounded corners
                   boxShadow: [
@@ -58,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  
+
                   padding: const EdgeInsets.symmetric(vertical:30,horizontal: 20),
                   child: Column(
                     children: [
@@ -93,7 +103,7 @@ class WelcomeScreen extends StatelessWidget {
                             prefixIcon: Icon(
                                 Icons.lock
                             ),
-                          
+
                         ),
                       ),
                       Padding(

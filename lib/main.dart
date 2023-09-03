@@ -24,20 +24,16 @@ class MyApp extends StatelessWidget {
           '/idspage' : (context) => IdsPage(),
       },
       debugShowCheckedModeBanner: false,
-      home: LayoutBuilder(
-        builder: (context, constraints) {
-          return Scaffold(
+      home: Scaffold(
 
-            body: Center(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: 600, // Set your maximum width here
-                ),
-                child: WelcomeScreen(), // You can replace this with your main content
-              ),
+        body: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 600, // Set your maximum width here
             ),
-          );
-        },
+            child: WelcomeScreen(), // You can replace this with your main content
+          ),
+        ),
       ),
     );
   }

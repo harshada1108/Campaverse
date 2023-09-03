@@ -34,3 +34,34 @@ class imageSlider extends StatelessWidget {
       ),);
   }
 }
+
+class imageSlider2 extends StatelessWidget {
+  final List<String> images = [
+    'images/workshopimages/hackathon.jpg',
+    'images/workshopimages/workshop1.jpg',
+    'images/workshopimages/workshop2.jpg'
+
+
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      width: double.infinity,
+      height: 300,
+      child: CarouselSlider(
+        items: images.map((imagePath) {
+          return Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          );
+        }).toList(),
+        options: CarouselOptions(
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 2),
+            aspectRatio: 16 / 9,
+            enlargeCenterPage: true
+        ),
+      ),);
+  }
+}

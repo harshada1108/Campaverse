@@ -9,7 +9,7 @@ class HorizontalScrollCards extends StatelessWidget {
         children: <Widget>[
           HorizontalCard(imageUrl: 'images/clubslogos/ids.jpg',onTap: (){ Navigator.pushNamed(context, '/idspage');},),
           HorizontalCard(imageUrl: 'images/studentcouncil1.jpg',onTap: (){Navigator.pushNamed(context, '/studentcouncil');},),
-          HorizontalCard(imageUrl: 'images/avatar.jpeg',onTap: (){},),
+
           HorizontalCard(imageUrl: 'images/axis.jpg',onTap: (){},),
          // HorizontalCard(imageUrl: 'images/arohi,jpg',onTap: (){},),
         ],
@@ -29,11 +29,11 @@ class HorizontalCard extends StatelessWidget {
     return Container(
      decoration: BoxDecoration(
 
-        color: Colors.white70.withOpacity(0.1), // Opacity value (0.5) for semi-transparency
+        color: Color.fromRGBO(9, 15, 21, 1).withOpacity(0.1), // Opacity value (0.5) for semi-transparency
         borderRadius: BorderRadius.circular(50), // Rounded corners
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2), // Shadow color and opacity
+            color: Colors.black.withOpacity(0.1), // Shadow color and opacity
             spreadRadius: 5, // Spread radius of the shadow
             blurRadius: 10, // Blur radius of the shadow
             offset: Offset(0, 3), // Offset of the shadow
