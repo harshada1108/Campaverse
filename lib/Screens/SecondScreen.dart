@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loginpage/Screens/Navbar.dart';
 import 'package:loginpage/widgets/DrawerList.dart';
 import 'package:loginpage/widgets/ListViewHorizontal.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
 import 'package:loginpage/widgets/icons.dart';
-import 'package:loginpage/main.dart';
-import 'package:loginpage/widgets/imageSlider.dart';
+
 class SecondScreen extends StatelessWidget {
   void _updateDrawerHeader(String name, String enrollmentNo) {
 

@@ -41,9 +41,9 @@ class IdsPage extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.2), // Shadow color and opacity
-                            spreadRadius: 5, // Spread radius of the shadow
+                            spreadRadius: 5, // to make the container attractive
                             blurRadius: 10, // Blur radius of the shadow
-                            offset: Offset(0, 3), // Offset of the shadow
+                            offset: Offset(0, 3), //
                           ),
                         ],
                       ),

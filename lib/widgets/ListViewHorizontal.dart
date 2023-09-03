@@ -7,11 +7,24 @@ class HorizontalScrollCards extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          HorizontalCard(imageUrl: 'images/clubslogos/ids.jpg',onTap: (){ Navigator.pushNamed(context, '/idspage');},),
-          HorizontalCard(imageUrl: 'images/studentcouncil1.jpg',onTap: (){Navigator.pushNamed(context, '/studentcouncil');},),
+          HorizontalCard(
+            imageUrl: 'images/clubslogos/ids.jpg',
+            onTap: () {
+              Navigator.pushNamed(context, '/idspage');
+            },
+          ),
+          HorizontalCard(
+            imageUrl: 'images/studentcouncil1.jpg',
+            onTap: () {
+              Navigator.pushNamed(context, '/studentcouncil');
+            },
+          ),
 
-          HorizontalCard(imageUrl: 'images/axis.jpg',onTap: (){},),
-         // HorizontalCard(imageUrl: 'images/arohi,jpg',onTap: (){},),
+          HorizontalCard(
+            imageUrl: 'images/axis.jpg',
+            onTap: () {},
+          ),
+          // HorizontalCard(imageUrl: 'images/arohi,jpg',onTap: (){},),
         ],
       ),
     );
@@ -27,9 +40,9 @@ class HorizontalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     decoration: BoxDecoration(
-
-        color: Color.fromRGBO(9, 15, 21, 1).withOpacity(0.1), // Opacity value (0.5) for semi-transparency
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(9, 15, 21, 1)
+            .withOpacity(0.1), // Opacity value (0.5) for semi-transparency
         borderRadius: BorderRadius.circular(50), // Rounded corners
         boxShadow: [
           BoxShadow(

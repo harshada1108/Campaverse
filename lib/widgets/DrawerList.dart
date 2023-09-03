@@ -16,7 +16,6 @@ class DrawerList extends StatelessWidget {
            // Handle onTap for Notification 1
              },
              ),
-
            ListTile(
              title: Text("Notification 1",style: TextStyle(color: Colors.white70)),
              onTap: () {
@@ -57,12 +56,14 @@ class DrawerList extends StatelessWidget {
               onTap: () {
                 // Handle onTap for Notification 2
               },
-            ),ListTile(
+            ),
+            ListTile(
               title: Text('Research Papers',style: TextStyle(color: Colors.white70)),
               onTap: () {
                 // Handle onTap for Notification 2
               },
-            ),ListTile(
+            ),
+            ListTile(
               title: Text("Competition and Participants",style: TextStyle(color: Colors.white70)),
               onTap: () {
                 // Handle onTap for Notification 2
@@ -99,22 +100,26 @@ class DrawerList extends StatelessWidget {
           onTap: () {
             // Handle onTap for Notification 2
           },
-        ), ListTile(
+        ),
+        ListTile(
           title: Text("ELECTRICAL",style: TextStyle(color: Colors.white70)),
           onTap: () {
             // Handle onTap for Notification 2
           },
-        ), ListTile(
+        ),
+        ListTile(
           title: Text("MINING",style: TextStyle(color: Colors.white70)),
           onTap: () {
             // Handle onTap for Notification 2
           },
-        ), ListTile(
+        ),
+        ListTile(
           title: Text("ELECTRICAL AND ELECTRONICS",style: TextStyle(color: Colors.white70)),
           onTap: () {
             // Handle onTap for Notification 2
           },
-        ), ListTile(
+        ),
+        ListTile(
           title: Text("CHEMICAL",style: TextStyle(color: Colors.white70)),
           onTap: () {
             // Handle onTap for Notification 2
